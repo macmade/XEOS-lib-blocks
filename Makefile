@@ -65,67 +65,45 @@ include ../../../Makefile-Config.mk
 # Display
 #-------------------------------------------------------------------------------
 
-PROMPT              := "    ["$(COLOR_GREEN)" XEOS "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" SRC  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" LIB  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" BLCK "$(COLOR_NONE)"]> *** "
-
-#-------------------------------------------------------------------------------
-# Search paths
-#-------------------------------------------------------------------------------
-
-# Define the search paths for source files
-vpath %$(EXT_C)         $(DIR_SRC_BLOCKS)
-
-#-------------------------------------------------------------------------------
-# File suffixes
-#-------------------------------------------------------------------------------
-
-# Adds the suffixes used in this file
-.SUFFIXES:  $(EXT_ASM_32)   \
-            $(EXT_ASM_64)   \
-            $(EXT_C)        \
-            $(EXT_H)        \
-            $(EXT_OBJ)      \
-            $(EXT_BIN)
+PROMPT  := "    ["$(COLOR_GREEN)" XEOS "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" SRC  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" LIB  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" BLCK "$(COLOR_NONE)"]> *** "
 
 #-------------------------------------------------------------------------------
 # Files
 #-------------------------------------------------------------------------------
 
-_FILES_C_OBJ_BUILD      = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_BLOCKS),$(PATH_SRC_LIB_BLOCKS))
+_FILES  = $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_BLOCKS))
 
 #-------------------------------------------------------------------------------
 # Built-in targets
 #-------------------------------------------------------------------------------
 
 # Declaration for phony targets, to avoid problems with local files
-.PHONY: all     \
-        clean
+.PHONY: all clean
 
 #-------------------------------------------------------------------------------
 # Phony targets
 #-------------------------------------------------------------------------------
 
 # Build the full project
-all:    $(_FILES_C_OBJ_BUILD)
+all: $(_FILES)
 	
 	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libblocks.a"$(COLOR_NONE)
-	@$(AR_32) $(ARGS_AR_32) $(PATH_BUILD_32_LIB_BIN)libblocks.a $(PATH_BUILD_32_LIB_OBJ_BLOCKS)*$(EXT_OBJ)
-	@$(RANLIB_32) $(PATH_BUILD_32_LIB_BIN)libblocks.a
+	@$(call XEOS_FUNC_LIB_STATIC_32,libblocks,$^)
 	
 	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libblocks.a"$(COLOR_NONE)
-	@$(AR_64) $(ARGS_AR_64) $(PATH_BUILD_64_LIB_BIN)libblocks.a $(PATH_BUILD_64_LIB_OBJ_BLOCKS)*$(EXT_OBJ)
-	@$(RANLIB_64) $(PATH_BUILD_64_LIB_BIN)libblocks.a
+	@$(call XEOS_FUNC_LIB_STATIC_64,libblocks,$^)
 	
 	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libblocks.so"$(COLOR_NONE)
-	@$(LD_32) $(ARGS_LD_SHARED_32) -o $(PATH_BUILD_32_LIB_BIN)libblocks.so $(PATH_BUILD_32_LIB_OBJ_BLOCKS)*$(EXT_OBJ_PIC)
+	@$(call XEOS_FUNC_LIB_DYNAMIC_32,libblocks,$^)
 	
 	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libblocks.so"$(COLOR_NONE)
-	@$(LD_64) $(ARGS_LD_SHARED_64) -o $(PATH_BUILD_64_LIB_BIN)libblocks.so $(PATH_BUILD_64_LIB_OBJ_BLOCKS)*$(EXT_OBJ_PIC)
+	@$(call XEOS_FUNC_LIB_DYNAMIC_64,libblocks,$^)
 
 # Cleans the build files
 clean:
 	
 	@$(PRINT) $(PROMPT)"Cleaning all build files"
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_LIB_OBJ_BLOCKS)*
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_LIB_OBJ_BLOCKS)*
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_LIB_BIN)libblocks.*
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_LIB_BIN)libblocks.*
+	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_OBJ)$(subst $(PATH_SRC),,$(PATH_SRC_LIB_BLOCKS))
+	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_OBJ)$(subst $(PATH_SRC),,$(PATH_SRC_LIB_BLOCKS))
+	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_BIN)libblocks.*
+	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_BIN)libblocks.*
