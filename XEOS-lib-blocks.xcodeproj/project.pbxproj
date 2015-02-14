@@ -1,0 +1,132 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		054FB9B21A8F115900CEA96A /* blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blocks.h; sourceTree = "<group>"; };
+		054FB9B51A8F115900CEA96A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		054FB9B61A8F115900CEA96A /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		054FB9B71A8F115900CEA96A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		054FB9B91A8F115900CEA96A /* _Block_object_assign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = _Block_object_assign.c; sourceTree = "<group>"; };
+		054FB9BA1A8F115900CEA96A /* _Block_object_dispose.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = _Block_object_dispose.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		054FB9B11A8F115900CEA96A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				054FB9B21A8F115900CEA96A /* blocks.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		054FB9B31A8F115900CEA96A /* make */ = {
+			isa = PBXGroup;
+			children = (
+				054FB9B51A8F115900CEA96A /* README.md */,
+			);
+			path = make;
+			sourceTree = "<group>";
+		};
+		054FB9B81A8F115900CEA96A /* source */ = {
+			isa = PBXGroup;
+			children = (
+				054FB9B91A8F115900CEA96A /* _Block_object_assign.c */,
+				054FB9BA1A8F115900CEA96A /* _Block_object_dispose.c */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		0595BA7A17AC11A70021435A = {
+			isa = PBXGroup;
+			children = (
+				054FB9B11A8F115900CEA96A /* include */,
+				054FB9B31A8F115900CEA96A /* make */,
+				054FB9B61A8F115900CEA96A /* Makefile */,
+				054FB9B71A8F115900CEA96A /* README.md */,
+				054FB9B81A8F115900CEA96A /* source */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		0595BA7F17AC11A70021435A /* XEOS-lib-blocks */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 0595BA8217AC11A70021435A /* Build configuration list for PBXLegacyTarget "XEOS-lib-blocks" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = "XEOS-lib-blocks";
+			passBuildSettingsInEnvironment = 1;
+			productName = "LIB-PTHREAD";
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		0595BA7B17AC11A70021435A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "XS-Labs";
+			};
+			buildConfigurationList = 0595BA7E17AC11A70021435A /* Build configuration list for PBXProject "XEOS-lib-blocks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0595BA7A17AC11A70021435A;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0595BA7F17AC11A70021435A /* XEOS-lib-blocks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		0595BA8117AC11A70021435A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		0595BA8417AC11A70021435A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0595BA7E17AC11A70021435A /* Build configuration list for PBXProject "XEOS-lib-blocks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0595BA8117AC11A70021435A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0595BA8217AC11A70021435A /* Build configuration list for PBXLegacyTarget "XEOS-lib-blocks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0595BA8417AC11A70021435A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0595BA7B17AC11A70021435A /* Project object */;
+}
