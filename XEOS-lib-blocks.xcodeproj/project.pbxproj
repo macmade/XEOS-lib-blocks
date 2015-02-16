@@ -8,7 +8,6 @@
 
 /* Begin PBXFileReference section */
 		054FB9B21A8F115900CEA96A /* blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blocks.h; sourceTree = "<group>"; };
-		054FB9B51A8F115900CEA96A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		054FB9B61A8F115900CEA96A /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		054FB9B71A8F115900CEA96A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		054FB9B91A8F115900CEA96A /* _Block_object_assign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = _Block_object_assign.c; sourceTree = "<group>"; };
@@ -24,14 +23,6 @@
 			path = include;
 			sourceTree = "<group>";
 		};
-		054FB9B31A8F115900CEA96A /* make */ = {
-			isa = PBXGroup;
-			children = (
-				054FB9B51A8F115900CEA96A /* README.md */,
-			);
-			path = make;
-			sourceTree = "<group>";
-		};
 		054FB9B81A8F115900CEA96A /* source */ = {
 			isa = PBXGroup;
 			children = (
@@ -45,7 +36,6 @@
 			isa = PBXGroup;
 			children = (
 				054FB9B11A8F115900CEA96A /* include */,
-				054FB9B31A8F115900CEA96A /* make */,
 				054FB9B61A8F115900CEA96A /* Makefile */,
 				054FB9B71A8F115900CEA96A /* README.md */,
 				054FB9B81A8F115900CEA96A /* source */,
@@ -75,7 +65,7 @@
 		0595BA7B17AC11A70021435A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "XS-Labs";
 			};
 			buildConfigurationList = 0595BA7E17AC11A70021435A /* Build configuration list for PBXProject "XEOS-lib-blocks" */;
