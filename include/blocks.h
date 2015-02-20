@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_BLOCKS_H__
-#define __XEOS_LIB_BLOCKS_H__
+#ifndef XEOS_LIB_BLOCKS_H
+#define XEOS_LIB_BLOCKS_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -101,4 +101,4 @@ Block_Literal;
 }
 #endif
 
-#endif /* __XEOS_LIB_BLOCKS_H__ */
+#endif /* XEOS_LIB_BLOCKS_H */
