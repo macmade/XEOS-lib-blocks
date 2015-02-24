@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <blocks.h>
 
 void _Block_object_assign( void * dest, void * source, int flags );
